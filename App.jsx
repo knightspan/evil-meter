@@ -971,53 +971,53 @@ Think you're worse? 😈
   // ========== LANDING ==========
   if (stage === 'landing') {
     return (
-      <div className="min-h-screen bg-zinc-950 flex items-center justify-center p-4 overflow-hidden">
+      <div className="min-h-screen bg-zinc-950 flex items-center justify-center p-3 sm:p-4 overflow-hidden">
         <style>{styles}</style>
         
-        <div className="text-center max-w-md">
+        <div className="text-center w-full max-w-[340px] sm:max-w-md lg:max-w-lg">
           {/* Floating emojis */}
-          <div className="flex justify-center gap-8 mb-6">
+          <div className="flex justify-center gap-3 sm:gap-5 mb-2 sm:mb-4">
             {['🔥', '😈', '🔥'].map((e, i) => (
-              <span key={i} className="text-4xl animate-float" style={{ animationDelay: `${i * 0.2}s` }}>{e}</span>
+              <span key={i} className="text-xl sm:text-3xl animate-float" style={{ animationDelay: `${i * 0.2}s` }}>{e}</span>
             ))}
           </div>
           
-          <h1 className="text-6xl sm:text-7xl text-yellow-400 font-display mb-2 animate-pulse"
-              style={{ textShadow: '0 0 40px rgba(250,204,21,0.5)' }}>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl text-yellow-400 font-display mb-1 animate-pulse"
+              style={{ textShadow: '0 0 25px rgba(250,204,21,0.5)' }}>
             EVIL METER
           </h1>
           
-          <p className="text-zinc-400 font-body mb-6">How evil are you compared to history's worst?</p>
+          <p className="text-zinc-400 font-body text-[10px] sm:text-sm mb-3 sm:mb-5">How evil are you compared to history's worst?</p>
           
           {/* Hitler face preview */}
-          <div className="my-8 relative">
-            <HitlerFace level={0} size={120} />
-            <p className="text-zinc-500 text-sm mt-3 font-body">
+          <div className="my-3 sm:my-6 relative">
+            <HitlerFace level={0} size={70} />
+            <p className="text-zinc-500 text-[9px] sm:text-xs mt-1.5 sm:mt-2 font-body">
               Can you wipe that smirk off his face?
             </p>
           </div>
           
           {/* Instructions */}
-          <div className="bg-zinc-900/50 rounded-xl p-4 mb-6 border border-zinc-800">
-            <div className="flex items-center justify-center gap-6 text-sm text-zinc-400 font-body">
+          <div className="bg-zinc-900/50 rounded-lg p-2 sm:p-3 mb-3 sm:mb-5 border border-zinc-800">
+            <div className="flex items-center justify-center gap-4 sm:gap-8 text-[9px] sm:text-xs text-zinc-400 font-body">
               <div className="text-center">
-                <span className="text-2xl">🎯</span>
-                <p>Slingshot skulls</p>
+                <span className="text-base sm:text-xl">🎯</span>
+                <p>Slingshot</p>
               </div>
               <div className="text-center">
-                <span className="text-2xl">😈</span>
-                <p>Hit your sins</p>
+                <span className="text-base sm:text-xl">😈</span>
+                <p>Hit sins</p>
               </div>
               <div className="text-center">
-                <span className="text-2xl">⚡</span>
-                <p>Build combos</p>
+                <span className="text-base sm:text-xl">⚡</span>
+                <p>Combos</p>
               </div>
             </div>
           </div>
           
           {/* High score */}
           {highScore > 0 && (
-            <p className="text-zinc-600 text-sm mb-4 font-body">
+            <p className="text-zinc-600 text-[9px] sm:text-xs mb-2 sm:mb-3 font-body">
               🏆 Your best: {highScore.toLocaleString()}
             </p>
           )}
@@ -1025,14 +1025,14 @@ Think you're worse? 😈
           <button 
             onClick={startGame}
             className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 
-                       text-white px-12 py-4 text-2xl rounded-xl font-display
+                       text-white px-6 sm:px-10 py-2 sm:py-3 text-base sm:text-xl rounded-lg font-display
                        border-2 border-yellow-400 transition-all hover:scale-105 active:scale-95"
-            style={{ boxShadow: '0 0 30px rgba(239,68,68,0.4), 0 4px 0 #b91c1c' }}
+            style={{ boxShadow: '0 0 20px rgba(239,68,68,0.4), 0 3px 0 #b91c1c' }}
           >
             FIND OUT 🔥
           </button>
           
-          <p className="text-zinc-700 text-xs mt-6 font-body">🔊 Sound on for best experience</p>
+          <p className="text-zinc-700 text-[9px] sm:text-xs mt-3 sm:mt-4 font-body">🔊 Sound on</p>
         </div>
       </div>
     );
@@ -1115,32 +1115,32 @@ Think you're worse? 😈
 
   // ========== RESULTS ==========
   return (
-    <div className="min-h-screen bg-zinc-950 overflow-auto py-8 px-4">
+    <div className="min-h-screen bg-zinc-950 flex flex-col p-2 sm:p-4 lg:p-6 overflow-auto">
       <style>{styles}</style>
       
-      <div className="max-w-md mx-auto">
+      <div className="w-full max-w-[360px] sm:max-w-lg lg:max-w-xl mx-auto my-auto">
         {/* Celebration */}
-        <div className="text-center mb-6 animate-slideUp">
-          <div className="flex justify-center gap-3 text-4xl mb-2">
+        <div className="text-center mb-1 sm:mb-3 animate-slideUp">
+          <div className="flex justify-center gap-1.5 sm:gap-3 text-lg sm:text-2xl lg:text-3xl">
             {['🔥', '😈', '💀', '😈', '🔥'].map((e, i) => (
               <span key={i} className="animate-float" style={{ animationDelay: `${i * 0.1}s` }}>{e}</span>
             ))}
           </div>
           {score > highScore && score > 0 && (
-            <p className="text-yellow-400 font-display text-lg">🎉 NEW HIGH SCORE!</p>
+            <p className="text-yellow-400 font-display text-xs sm:text-sm">🎉 NEW HIGH SCORE!</p>
           )}
         </div>
 
         {/* Main card */}
-        <div className="bg-zinc-900 border-2 border-yellow-400 rounded-2xl p-6 animate-slideUp"
-             style={{ boxShadow: '0 0 40px rgba(250,204,21,0.15), 8px 8px 0 #E63946', animationDelay: '0.1s' }}>
+        <div className="bg-zinc-900 border-2 border-yellow-400 rounded-xl p-2.5 sm:p-4 lg:p-6 animate-slideUp"
+             style={{ boxShadow: '0 0 25px rgba(250,204,21,0.15), 4px 4px 0 #E63946' }}>
           
           {/* Hitler face with message */}
-          <div className="text-center mb-4">
-            <HitlerFace level={hitlerLevel} size={100} />
-            <div className="bg-white rounded-lg px-4 py-2 mt-3 mx-auto max-w-xs relative">
-              <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45" />
-              <p className="text-zinc-800 font-body font-semibold text-sm">
+          <div className="text-center mb-1.5 sm:mb-3">
+            <div className="inline-block"><HitlerFace level={hitlerLevel} size={50} /></div>
+            <div className="bg-white rounded-lg px-2 py-1 mt-1 mx-auto max-w-[160px] sm:max-w-[200px] relative">
+              <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rotate-45" />
+              <p className="text-zinc-800 font-body font-semibold text-[9px] sm:text-xs">
                 {hitlerLevel === 0 && '"Pathetic. That\'s it?"'}
                 {hitlerLevel === 1 && '"Hmm... not bad"'}
                 {hitlerLevel === 2 && '"Wait, you\'re getting close..."'}
@@ -1151,21 +1151,21 @@ Think you're worse? 😈
           </div>
 
           {/* Percentage */}
-          <div className="text-center mb-4">
-            <p className="text-zinc-500 text-sm font-body">You are</p>
-            <p className="text-5xl font-display text-yellow-400" style={{ textShadow: '0 0 30px rgba(250,204,21,0.5)' }}>
+          <div className="text-center mb-1.5 sm:mb-3">
+            <p className="text-zinc-500 text-[9px] sm:text-xs font-body">You are</p>
+            <p className="text-2xl sm:text-4xl lg:text-5xl font-display text-yellow-400" style={{ textShadow: '0 0 20px rgba(250,204,21,0.5)' }}>
               {(score / 10000 * 100).toFixed(2)}%
             </p>
-            <p className="text-zinc-500 text-sm font-body">as evil as Hitler</p>
+            <p className="text-zinc-500 text-[9px] sm:text-xs font-body">as evil as Hitler</p>
           </div>
 
           {/* Progress bar */}
-          <div className="mb-4">
-            <div className="flex justify-between text-xs text-zinc-600 mb-1 font-body">
+          <div className="mb-1.5 sm:mb-3">
+            <div className="flex justify-between text-[8px] sm:text-[10px] text-zinc-600 mb-0.5 font-body">
               <span>😇 Angel</span>
               <span>Hitler 💀</span>
             </div>
-            <div className="h-3 bg-zinc-800 rounded-full overflow-hidden">
+            <div className="h-1.5 sm:h-2 bg-zinc-800 rounded-full overflow-hidden">
               <div 
                 className="h-full rounded-full transition-all duration-1000"
                 style={{ 
@@ -1177,66 +1177,66 @@ Think you're worse? 😈
           </div>
 
           {/* Villain level */}
-          <div className="bg-zinc-950/50 rounded-xl p-4 mb-4 text-center">
-            <p className="text-zinc-500 text-xs font-body mb-1">YOUR EVIL LEVEL</p>
-            <p className="text-2xl font-display text-yellow-400">{villain.emoji} {villain.name}</p>
-            <p className="text-zinc-400 text-sm font-body mt-1">"{villain.desc}"</p>
+          <div className="bg-zinc-950/50 rounded-lg p-1.5 sm:p-2.5 mb-1.5 sm:mb-3 text-center">
+            <p className="text-zinc-500 text-[8px] sm:text-[10px] font-body">YOUR EVIL LEVEL</p>
+            <p className="text-sm sm:text-lg lg:text-xl font-display text-yellow-400">{villain.emoji} {villain.name}</p>
+            <p className="text-zinc-400 text-[9px] sm:text-xs font-body">"{villain.desc}"</p>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-3 mb-4">
-            <div className="bg-zinc-950/50 rounded-lg p-3 text-center">
-              <p className="text-yellow-400 text-2xl font-display">{score.toLocaleString()}</p>
-              <p className="text-zinc-500 text-xs font-body">Score</p>
+          <div className="grid grid-cols-3 gap-1 sm:gap-2 mb-1.5 sm:mb-3">
+            <div className="bg-zinc-950/50 rounded p-1 sm:p-2 text-center">
+              <p className="text-yellow-400 text-sm sm:text-xl font-display">{score.toLocaleString()}</p>
+              <p className="text-zinc-500 text-[7px] sm:text-[10px] font-body">Score</p>
             </div>
-            <div className="bg-zinc-950/50 rounded-lg p-3 text-center">
-              <p className="text-green-400 text-2xl font-display">x{maxCombo}</p>
-              <p className="text-zinc-500 text-xs font-body">Max Combo</p>
+            <div className="bg-zinc-950/50 rounded p-1 sm:p-2 text-center">
+              <p className="text-green-400 text-sm sm:text-xl font-display">x{maxCombo}</p>
+              <p className="text-zinc-500 text-[7px] sm:text-[10px] font-body">Max Combo</p>
             </div>
-            <div className="bg-zinc-950/50 rounded-lg p-3 text-center">
-              <p className="text-white text-2xl font-display">
+            <div className="bg-zinc-950/50 rounded p-1 sm:p-2 text-center">
+              <p className="text-white text-sm sm:text-xl font-display">
                 {totalShots > 0 ? Math.round(hits.length / totalShots * 100) : 0}%
               </p>
-              <p className="text-zinc-500 text-xs font-body">Accuracy</p>
+              <p className="text-zinc-500 text-[7px] sm:text-[10px] font-body">Accuracy</p>
             </div>
           </div>
 
-          {/* Sin grid (Wordle-style) */}
+          {/* Sin grid */}
           {hits.length > 0 && (
-            <div className="mb-4">
-              <p className="text-zinc-600 text-xs text-center mb-2 font-body">YOUR SINS</p>
-              <div className="flex flex-wrap justify-center gap-1">
-                {[...new Set(hits.map(h => h.e))].slice(0, 15).map((e, i) => (
-                  <span key={i} className="text-xl bg-zinc-950/50 p-2 rounded-lg">{e}</span>
+            <div className="mb-1.5 sm:mb-3">
+              <p className="text-zinc-600 text-[8px] sm:text-[10px] text-center mb-1 font-body">YOUR SINS</p>
+              <div className="flex flex-wrap justify-center gap-0.5">
+                {[...new Set(hits.map(h => h.e))].slice(0, 8).map((e, i) => (
+                  <span key={i} className="text-xs sm:text-base bg-zinc-950/50 p-0.5 sm:p-1 rounded">{e}</span>
                 ))}
               </div>
             </div>
           )}
 
           {/* Share buttons */}
-          <div className="space-y-3">
+          <div className="space-y-1 sm:space-y-2">
             <button 
               onClick={shareTwitter}
-              className="w-full py-3 bg-black border border-zinc-700 text-white rounded-xl 
-                         hover:border-blue-400 hover:bg-blue-950/20 transition-all flex items-center justify-center gap-2 font-body"
+              className="w-full py-1.5 sm:py-2.5 bg-black border border-zinc-700 text-white rounded-lg 
+                         hover:border-blue-400 transition-all flex items-center justify-center gap-1.5 sm:gap-2 font-body text-[10px] sm:text-sm"
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
               <span className="font-semibold">Share on X</span>
             </button>
             
-            <div className="flex gap-3">
+            <div className="flex gap-1 sm:gap-2">
               <button 
                 onClick={startGame}
-                className="flex-1 py-3 border-2 border-yellow-400 text-yellow-400 rounded-xl 
-                           hover:bg-yellow-400 hover:text-black transition-all font-display text-lg"
+                className="flex-1 py-1.5 sm:py-2.5 border-2 border-yellow-400 text-yellow-400 rounded-lg 
+                           hover:bg-yellow-400 hover:text-black transition-all font-display text-xs sm:text-base"
               >
                 AGAIN
               </button>
               <button 
                 onClick={copyResult}
-                className="flex-1 py-3 bg-red-600 hover:bg-red-500 text-white rounded-xl transition-all font-display text-lg"
+                className="flex-1 py-1.5 sm:py-2.5 bg-red-600 hover:bg-red-500 text-white rounded-lg transition-all font-display text-xs sm:text-base"
               >
                 COPY
               </button>
@@ -1244,15 +1244,9 @@ Think you're worse? 😈
           </div>
         </div>
 
-        {/* Challenge friends */}
-        <div className="text-center mt-6 animate-slideUp" style={{ animationDelay: '0.3s' }}>
-          <p className="text-zinc-600 text-sm font-body mb-2">Challenge your friends! 👇</p>
-          <p className="text-zinc-700 text-xs font-body">#EvilMeter • Think you're worse?</p>
-        </div>
-
-        {/* Disclaimer */}
-        <p className="text-center text-zinc-800 text-xs mt-6 font-body">
-          This is satire. Hitler was the worst. You're probably fine. 🐟
+        {/* Footer */}
+        <p className="text-center text-zinc-700 text-[8px] sm:text-[10px] mt-1.5 sm:mt-3 font-body">
+          Satire • Hitler was the worst • You're fine 🐟
         </p>
       </div>
     </div>
